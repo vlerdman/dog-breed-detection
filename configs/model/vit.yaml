@@ -1,0 +1,9 @@
+backbone: vit_base_patch16_224
+pretrained: true
+num_classes: 120
+dropout: 0.1
+
+# Freeze backbone to train only classification head
+# Set to false for full fine-tuning
+freeze_backbone: true
+feature_dim: 768

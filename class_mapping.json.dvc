@@ -1,0 +1,5 @@
+outs:
+- md5: 068b951bb5e6786aae203b8f27ee81ca
+  size: 8772
+  hash: md5
+  path: class_mapping.json

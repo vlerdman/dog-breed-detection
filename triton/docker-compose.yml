@@ -1,0 +1,33 @@
+services:
+  triton:
+    image: nvcr.io/nvidia/tritonserver:24.01-py3
+    container_name: triton-server
+    ports:
+      - "8000:8000" # HTTP
+      - "8001:8001" # gRPC
+      - "8002:8002" # Metrics
+    volumes:
+      - ../model_repository:/models
+    command:
+      [
+        "tritonserver",
+        "--model-repository=/models",
+        "--strict-model-config=false",
+      ]
+    shm_size: "4g"
+    ulimits:
+      memlock: -1
+      stack: 67108864
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/v2/health/ready"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["0"]
+              capabilities: [gpu]

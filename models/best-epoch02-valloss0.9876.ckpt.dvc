@@ -1,0 +1,5 @@
+outs:
+- md5: 7c70dc9274161d41791126895e9a89a0
+  size: 570703395
+  hash: md5
+  path: best-epoch02-valloss0.9876.ckpt

@@ -1,0 +1,4 @@
+[core]
+    remote = yandex-s3
+['remote "yandex-s3"']
+    url = https://dog-breed-detection.storage.yandexcloud.net

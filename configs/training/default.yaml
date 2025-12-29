@@ -1,0 +1,19 @@
+seed: 42
+epochs: 10
+batch_size: 8
+learning_rate: 3e-3
+min_lr: 1e-6
+weight_decay: 0.0
+momentum: 0.9 # For SGD optimizer
+
+# Optimizer: "sgd" or "adamw"
+optimizer: sgd
+
+accelerator: auto
+devices: 1
+precision: 16-mixed
+checkpoint_dir: checkpoints
+early_stopping_patience: 5
+
+run_test: true
+export_onnx: false # Export ONNX model for Triton after training

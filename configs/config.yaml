@@ -1,0 +1,8 @@
+defaults:
+  - data: default
+  - model: vit
+  - training: default
+  - logging: mlflow
+  - _self_
+
+experiment_name: dog_breed_classification
